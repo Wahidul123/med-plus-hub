@@ -24,12 +24,9 @@ export default function Header() {
       <div className="w-full bg-destructive text-destructive-foreground py-3">
         <div className="max-w-[100rem] mx-auto px-6 lg:px-12 flex items-center justify-center gap-3">
           <Phone className="w-5 h-5" />
-          <span className="font-paragraph text-sm font-medium">
-            Emergency Hotline: +1 (555) 123-4567 - Available 24/7
-          </span>
+          <span className="font-paragraph text-sm font-medium">Emergency Hotline: +91 9999900000 - Available 24/7</span>
         </div>
       </div>
-
       {/* Main Header */}
       <header className="w-full bg-white shadow-sm sticky top-0 z-50">
         <div className="max-w-[100rem] mx-auto px-6 lg:px-12">

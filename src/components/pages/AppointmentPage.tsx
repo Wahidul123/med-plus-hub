@@ -1,8 +1,5 @@
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Calendar, CheckCircle } from 'lucide-react';
-import { BaseCrudService } from '@/integrations';
-import { Doctors, AppointmentRequests } from '@/entities';
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -13,8 +10,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import { AppointmentRequests, Doctors } from '@/entities';
+import { BaseCrudService } from '@/integrations';
+import { motion } from 'framer-motion';
+import { Calendar, CheckCircle } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 export default function AppointmentPage() {
   const [doctors, setDoctors] = useState<Doctors[]>([]);
@@ -44,10 +44,10 @@ export default function AppointmentPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     try {
       setIsSubmitting(true);
-      
+
       await BaseCrudService.create<AppointmentRequests>('appointmentrequests', {
         _id: crypto.randomUUID(),
         patientName: formData.patientName,
@@ -57,7 +57,7 @@ export default function AppointmentPage() {
         preferredDate: formData.preferredDate,
         preferredTime: formData.preferredTime,
       });
-      
+
       setIsSuccess(true);
       setFormData({
         patientName: '',
@@ -82,7 +82,7 @@ export default function AppointmentPage() {
     return (
       <div className="min-h-screen bg-background">
         <Header />
-        
+
         <section className="w-full max-w-[100rem] mx-auto px-6 lg:px-12 py-20">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -107,7 +107,7 @@ export default function AppointmentPage() {
             </Button>
           </motion.div>
         </section>
-        
+
         <Footer />
       </div>
     );
@@ -116,7 +116,7 @@ export default function AppointmentPage() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="w-full bg-white py-20">
         <div className="max-w-[100rem] mx-auto px-6 lg:px-12">
@@ -191,7 +191,7 @@ export default function AppointmentPage() {
                 value={formData.phoneNumber}
                 onChange={(e) => handleChange('phoneNumber', e.target.value)}
                 className="font-paragraph"
-                placeholder="+1 (555) 123-4567"
+                placeholder="+91 12345 67890"
               />
             </div>
 

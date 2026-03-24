@@ -10,7 +10,6 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
       {/* Hero Section */}
       <section className="w-full max-w-[120rem] mx-auto px-6 lg:px-12 pt-32 pb-24">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -48,16 +47,15 @@ export default function HomePage() {
           >
             <div className="aspect-[4/3] rounded-lg overflow-hidden">
               <Image
-                src="https://static.wixstatic.com/media/03ee5f_16184e300f3940bf891c5904bc2258d5~mv2.png?originWidth=768&originHeight=576"
-                alt="Modern medical facility with caring healthcare professionals"
+                src="https://static.wixstatic.com/media/03ee5f_e82b52a0388045e885f800a0f19f5a1e~mv2.png"
                 className="w-full h-full object-cover"
                 width={800}
-              />
+                originWidth={1195}
+                originHeight={896} />
             </div>
           </motion.div>
         </div>
       </section>
-
       {/* Quick Stats */}
       <section className="w-full bg-white py-20">
         <div className="max-w-[100rem] mx-auto px-6 lg:px-12">
@@ -106,7 +104,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* Why Choose Us */}
       <section className="w-full max-w-[100rem] mx-auto px-6 lg:px-12 py-24">
         <motion.div
@@ -198,7 +195,6 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
       {/* CTA Section */}
       <section className="w-full bg-primary py-20">
         <div className="max-w-[100rem] mx-auto px-6 lg:px-12 text-center">
@@ -230,7 +226,6 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
       <Footer />
     </div>
   );
